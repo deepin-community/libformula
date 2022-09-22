@@ -1,0 +1,72 @@
+libformula (1.1.7.dfsg-2.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Tue, 22 Dec 2020 00:23:22 +0100
+
+libformula (1.1.7.dfsg-2) unstable; urgency=low
+
+  * merge libbase 1.1.6-2 changes 
+
+ -- Rene Engelhard <rene@debian.org>  Tue, 01 Nov 2011 15:06:17 +0000
+
+libformula (1.1.7.dfsg-1) unstable; urgency=low
+
+  * remove test-lib/junit-3.8.1.jar
+  * build-depend on junit; prepare to and run ant test
+
+ -- Rene Engelhard <rene@debian.org>  Tue, 27 Sep 2011 22:31:57 +0000
+
+libformula (1.1.7-1) unstable; urgency=low
+
+  * New upstream release 
+  * switch back to Debian Java Maintainers, me as Uploader
+  * remove JRE depends
+  * add classpath to jar using jh_classpath
+  * use jh_depends / ${java:Depends} 
+
+ -- Rene Engelhard <rene@debian.org>  Sun, 25 Sep 2011 15:51:54 +0000
+
+libformula (0.1.14-4) unstable; urgency=low
+
+  * QA upload.
+  * Orphaning package.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 07 Aug 2011 18:52:07 +0200
+
+libformula (0.1.14-3) unstable; urgency=low
+
+  * (Build-)Depends on default-jdk.
+  * Build Java 5-compatible class files.
+  * Added myself to Uploaders.
+  * Updated Standards-Version to 3.8.3.
+
+ -- Michael Koch <konqueror@gmx.de>  Thu, 24 Sep 2009 11:28:59 +0200
+
+libformula (0.1.14-2) unstable; urgency=low
+
+  [ Matthias Klose ]
+  * (Build-)depend on default-jre/-jdk.
+
+  [ Torsten Werner ]
+  * Add myself to Uploaders.
+  * Add missing Depends: ${misc:Depends}.
+  * Update Build-Depends: debhelper (>= 5).
+  * Add Vcs-* headers.
+  * Update Standards-Version: 3.8.2.
+  * Change Section: java.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 02 Aug 2009 23:04:52 +0200
+
+libformula (0.1.14-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Rene Engelhard <rene@debian.org>  Fri, 25 Apr 2008 18:21:41 +0200
+
+libformula (0.1.8-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Rene Engelhard <rene@debian.org>  Sat, 06 Oct 2007 16:10:58 +0200

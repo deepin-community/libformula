@@ -1,0 +1,38 @@
+Source: libformula
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Rene Engelhard <rene@debian.org>
+Build-Depends: debhelper (>= 5), cdbs, default-jdk, ant, libjcommon-java (>= 1.0.10), javacc, ant-optional, libbase-java, libcommons-logging-java, javahelper, junit, ant-contrib
+Standards-Version: 3.8.3
+Vcs-Svn: svn://svn.debian.org/svn/pkg-java/trunk/libformula
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-java/trunk/libformula/
+
+Package: libformula-java
+Architecture: all
+Depends: libjcommon-java (>= 1.0.10-1),
+ ${misc:Depends}
+Suggests: libformula-java-doc
+Description: Excel(tm) style formula expressions library
+ LibFormula provides Excel-Style-Expressions. The implementation provided
+ here is very generic and can be used in any application that needs to
+ compute formulas.
+ .
+ The syntax is based on the OpenFormula-specifications, but with carefully
+ pruning away all the spreadsheet specific parts (like references to
+ cell-ranges).
+
+Package: libformula-java-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Description: Excel(tm) style formula expressions library
+ LibFormula provides Excel-Style-Expressions. The implementation provided
+ here is very generic and can be used in any application that needs to
+ compute formulas.
+ .
+ The syntax is based on the OpenFormula-specifications, but with carefully
+ pruning away all the spreadsheet specific parts (like references to
+ cell-ranges).
+ .
+ This package contains the Javadoc.

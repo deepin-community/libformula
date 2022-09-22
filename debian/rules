@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+# debian/rules file for libfonts-java (uses cdbs)
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/ant.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+
+
+JAVA_HOME := /usr/lib/jvm/default-java
+DEB_JARS := $(ANT_HOME)/lib/ant-launcher.jar $(ANT_HOME)/lib/ant-nodeps.jar jcommon libbase commons-logging junit ant-contrib ant-junit
+DEB_ANT_BUILD_TARGET := compile-jj compile jar javadoc
+DEB_ANT_CHECK_TARGET := test
+
+DEB_UPSTREAM_VERSION := 1.1-SNAPSHOT
+
+clean::
+	-rm -rf build
+	-rm -rf javadoc
+	-rm -f libformula-$(DEB_UPSTREAM_VERSION).jar
+	# don't use them, go sure
+	-rm -f lib/* lib/optional/* test-lib/*
+	for i in TokenMgrError.java ParseException.java Token.java JavaCharStream.java \
+		GeneratedFormulaParser.java GeneratedFormulaParserConstants.java \
+		GeneratedFormulaParserTokenManager.java; do \
+		rm -f source/org/pentaho/reporting/libraries/formula/parser/$$i; \
+	done
+
+install/libformula-java::
+	install -m 644 dist/libformula-$(DEB_UPSTREAM_VERSION).jar debian/libformula-java/usr/share/java/libformula-$(DEB_UPSTREAM_VERSION).jar
+	ln -s libformula-$(DEB_UPSTREAM_VERSION).jar debian/libformula-java/usr/share/java/libformula.jar
+	jh_classpath -plibformula-java --classpath="/usr/share/java/jcommon.jar" debian/libformula-java/usr/share/java/libformula-$(DEB_UPSTREAM_VERSION).jar
+	jh_depends
+
+install/libformula-java-doc::
+	jh_installjavadoc
+
