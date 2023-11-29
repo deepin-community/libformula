@@ -22,7 +22,7 @@
 	<!-- Import the common_build.xml file which contains all the default tasks -->
 	<import file="${common.build.file}"/>
 
-        <property name="javacchome" value="/usr/share/java"/>
+        <property name="javacchome" value="/home/src/ext/javacc"/>
     <!--
       AS STATED ABOVE, THE ONLY TASKS THAT SHOULD EXIST IN THIS BUILD FILE ARE
       THE TASKS THAT NEED TO DIFFER FROM THE DEFAULT IMPLEMENTATION OF THE TASKS
@@ -34,7 +34,7 @@
     <javacc
         target="source/org/pentaho/reporting/libraries/formula/parser/Parser.jj"
         outputdirectory="source/org/pentaho/reporting/libraries/formula/parser"
-        javacchome="/usr/share/java"
+        javacchome="${javacchome}"
     />
   </target>
 
