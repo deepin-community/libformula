@@ -1,3 +1,20 @@
+libformula (1.1.7.dfsg-4) unstable; urgency=medium
+
+  * Team upload
+  * Update to source format 3.0 (Closes: #1043197)
+  * Reformat Build-Depends
+
+ -- tony mancill <tmancill@debian.org>  Thu, 14 Sep 2023 20:44:36 -0700
+
+libformula (1.1.7.dfsg-3) unstable; urgency=medium
+
+  * Team upload
+  * Bump debian/compat to 9 (Closes: #965642)
+  * Use ${java:Depends} (Closes: #695283)
+  * Update Vcs URLs to point to Salsa
+
+ -- tony mancill <tmancill@debian.org>  Sun, 09 Jan 2022 19:58:37 -0800
+
 libformula (1.1.7.dfsg-2.1) unstable; urgency=medium
 
   * Non maintainer upload by the Reproducible Builds team.
@@ -7,7 +24,7 @@ libformula (1.1.7.dfsg-2.1) unstable; urgency=medium
 
 libformula (1.1.7.dfsg-2) unstable; urgency=low
 
-  * merge libbase 1.1.6-2 changes 
+  * merge libbase 1.1.6-2 changes
 
  -- Rene Engelhard <rene@debian.org>  Tue, 01 Nov 2011 15:06:17 +0000
 
@@ -20,11 +37,11 @@ libformula (1.1.7.dfsg-1) unstable; urgency=low
 
 libformula (1.1.7-1) unstable; urgency=low
 
-  * New upstream release 
+  * New upstream release
   * switch back to Debian Java Maintainers, me as Uploader
   * remove JRE depends
   * add classpath to jar using jh_classpath
-  * use jh_depends / ${java:Depends} 
+  * use jh_depends / ${java:Depends}
 
  -- Rene Engelhard <rene@debian.org>  Sun, 25 Sep 2011 15:51:54 +0000
 

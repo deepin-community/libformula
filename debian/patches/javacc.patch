@@ -1,0 +1,42 @@
+Description: set javacchome and ?? (parsePosition patch)
+ This patch was generated when converting to source format 3.0.
+ The javacchome patch is clear enough, but I don't know the history
+ of the parsePosition patch, which predates the migration of the
+ source package into git.
+Author: tony mancill <tmancill@debian.org>
+Bug-Debian: https://bugs.debian.org/1043197
+
+--- libformula-1.1.7.dfsg.orig/build.xml
++++ libformula-1.1.7.dfsg/build.xml
+@@ -22,7 +22,7 @@
+ 	<!-- Import the common_build.xml file which contains all the default tasks -->
+ 	<import file="${common.build.file}"/>
+ 
+-        <property name="javacchome" value="/home/src/ext/javacc"/>
++        <property name="javacchome" value="/usr/share/java"/>
+     <!--
+       AS STATED ABOVE, THE ONLY TASKS THAT SHOULD EXIST IN THIS BUILD FILE ARE
+       THE TASKS THAT NEED TO DIFFER FROM THE DEFAULT IMPLEMENTATION OF THE TASKS
+@@ -34,7 +34,7 @@
+     <javacc
+         target="source/org/pentaho/reporting/libraries/formula/parser/Parser.jj"
+         outputdirectory="source/org/pentaho/reporting/libraries/formula/parser"
+-        javacchome="${javacchome}"
++        javacchome="/usr/share/java"
+     />
+   </target>
+ 
+--- libformula-1.1.7.dfsg.orig/source/org/pentaho/reporting/libraries/formula/parser/FormulaParseException.java
++++ libformula-1.1.7.dfsg/source/org/pentaho/reporting/libraries/formula/parser/FormulaParseException.java
+@@ -68,8 +68,9 @@ public class FormulaParseException exten
+     super(error.getMessage());
+     this.error = error;
+     this.parent = error;
+-    this.parsePosition = new ParsePosition
+-        (error.getErrorLine(), error.getErrorColumn(), error.getErrorLine(), error.getErrorColumn());
++//    this.parsePosition = new ParsePosition
++//        (error.getErrorLine(), error.getErrorColumn(), error.getErrorLine(), error.getErrorColumn());
++    this.parsePosition = getParsePosition();
+   }
+ 
+   public TokenMgrError getError()

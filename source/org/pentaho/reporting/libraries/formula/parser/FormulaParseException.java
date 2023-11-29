@@ -68,9 +68,8 @@ public class FormulaParseException extends ParseException
     super(error.getMessage());
     this.error = error;
     this.parent = error;
-//    this.parsePosition = new ParsePosition
-//        (error.getErrorLine(), error.getErrorColumn(), error.getErrorLine(), error.getErrorColumn());
-    this.parsePosition = getParsePosition();
+    this.parsePosition = new ParsePosition
+        (error.getErrorLine(), error.getErrorColumn(), error.getErrorLine(), error.getErrorColumn());
   }
 
   public TokenMgrError getError()
